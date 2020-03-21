@@ -7,24 +7,45 @@ public class Main : MonoBehaviour
 {
 
     public GameObject myPrefab;
+    public float targetTime;
+    private float targetTimeCopy;
+
 
     // Start is called before the first frame update
     void Start()
+     {
+       targetTimeCopy = targetTime;
+     }
+
+// Update is called once per frame
+void Update()
     {
+        targetTime -= Time.deltaTime;
 
-        float xHang = -8f;
-
-        for (int i = 0; i < 100; i++)
+        if (targetTime <= 0.0f)
         {
-            Instantiate(myPrefab, new Vector3(xHang, 0, 0), Quaternion.identity);
-
-            xHang += 0.5f;
+            timerEnded();
+            targetTime = targetTimeCopy;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    // Generate a random number of ants on the surface
+    public void BirthAnts(int n, float xmin, float xmax)
+    { 
+
+        for (int i = 0; i < n; i++)
+        {
+
+            Instantiate(myPrefab, new Vector3(Random.Range(xmin, xmax), 0, 0), Quaternion.identity);
+
+            
+        }
+    }
+
+    void timerEnded()
     {
-        
+        //do your stuff here.
+        BirthAnts(10, -20f, 20f);
     }
 }
