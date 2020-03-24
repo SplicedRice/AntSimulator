@@ -294,10 +294,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1979
-    y: 75
-    width: 275
-    height: 1260
+    x: 951.5
+    y: 78.5
+    width: 408
+    height: 748
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &13
 MonoBehaviour:
@@ -590,9 +590,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.980133, y: -4.107345, z: -2.7244542}
+    m_Target: {x: 0.024323858, y: -0.05791415, z: -0.07200721}
     speed: 2
-    m_Value: {x: 2.980133, y: -4.107345, z: -2.7244542}
+    m_Value: {x: 0.024323858, y: -0.05791415, z: -0.07200721}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -625,9 +625,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 22.523994
+    m_Target: 1.257567
     speed: 2
-    m_Value: 22.523994
+    m_Value: 1.257567
   m_Ortho:
     m_Target: 1
     speed: 2
