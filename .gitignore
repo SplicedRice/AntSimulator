@@ -1,1 +1,4 @@
 .vs/
+Library/
+obj/
+Logs/
