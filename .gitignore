@@ -1,4 +1,7 @@
-.vs/
-Library/
-obj/
-Logs/
+AntSimulator/.vs/*
+AntSimulator/Library/*
+AntSimulator/obj/*
+AntSimulator/Logs/*
+AntSimulator/Temp/*
+AntSimulator/*.sln
+AntSimulator/*.csproj
