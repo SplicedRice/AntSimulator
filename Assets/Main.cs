@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//high how r u?
+//high how r u? high
 
 public class Main : MonoBehaviour
 {
     // Initialization
+    public GameObject floor;
     public GameObject[] myPrefab; //holds prefabs for all ant types. Use indexing to indicated different ant types
     public GameObject[] ant; //individual ants spawned for each type
     public float targetTime; //time to create or destroy ants
@@ -14,19 +15,42 @@ public class Main : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-     {
+    {
        targetTimeCopy = targetTime;
-     }
+       CreateFloor(-20f, -2f, 100, 100);
+    }
 
-// Update is called once per frame
-void Update()
+    // Update is called once per frame
+    void Update()
     {
         targetTime -= Time.deltaTime;
 
         if (targetTime <= 0.0f)
         {
-            timerEnded();
+            antBirthKillEnded();
             targetTime = targetTimeCopy;
+        }
+    }
+
+    public void CreateFloor(float xStart, float yStart, int xNum, int yNum)
+    {
+
+        var floorHeight = floor.GetComponent<SpriteRenderer>().bounds.size.x;
+        var floorWidth = floor.GetComponent<SpriteRenderer>().bounds.size.x;
+        var xHang = xStart;
+        var yHang = yStart;
+
+        for (int i = 0; i < xNum; i++)
+        {
+            for (int j = 0; j < yNum; j++)
+            {
+                Instantiate(floor, new Vector3(xHang, yHang, 0), Quaternion.identity);
+                xHang += floorWidth;
+            }
+
+            xHang = xStart;
+            yHang -= floorHeight;
+
         }
     }
 
@@ -62,7 +86,7 @@ void Update()
         }
     }
 
-    void timerEnded()
+    void antBirthKillEnded()
     {
         //do your stuff here.
         BirthAnts(20, 0, -20f, 20f); // birth 5 ants of type 0 within x vals of (-20f,20f)
