@@ -12,12 +12,13 @@ public class Main : MonoBehaviour
     public float targetTime; //time to create or destroy ants
     private float targetTimeCopy; //for reseting time
 
+    public string dirtDigStatus;
 
     // Start is called before the first frame update
     void Start()
     {
        targetTimeCopy = targetTime;
-       CreateFloor(-20f, -2f, 100, 100);
+       //CreateFloor(-20f, -2f, 100, 100);
     }
 
     // Update is called once per frame
@@ -32,6 +33,7 @@ public class Main : MonoBehaviour
         }
     }
 
+    /*
     public void CreateFloor(float xStart, float yStart, int xNum, int yNum)
     {
 
@@ -53,6 +55,7 @@ public class Main : MonoBehaviour
 
         }
     }
+    */
 
 
     // Generate n number of ants at random locations on the surface
@@ -80,7 +83,7 @@ public class Main : MonoBehaviour
             {
                 idx = Random.Range(0, ant.Length); // find random ant to kill
             }
-           Destroy(ant[idx]); 
+           Destroy(ant[idx], 3f); 
            
 
         }
