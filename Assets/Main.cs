@@ -13,11 +13,14 @@ public class Main : MonoBehaviour
     private float targetTimeCopy; //for reseting time
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-       targetTimeCopy = targetTime;
-       CreateFloor(-20f, -2f, 100, 100);
+  
+        targetTimeCopy = targetTime;
+        CreateFloor(-20f, -2f, 100, 100);
     }
 
     // Update is called once per frame
@@ -30,6 +33,9 @@ public class Main : MonoBehaviour
             antBirthKillEnded();
             targetTime = targetTimeCopy;
         }
+
+
+   
     }
 
     public void CreateFloor(float xStart, float yStart, int xNum, int yNum)
